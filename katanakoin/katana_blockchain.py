@@ -1,6 +1,7 @@
 # blockchain-imports
 
 from hashlib import sha256
+import datetime
 
 def updatehash(*args):
     hashing_text = ""; h = sha256()
@@ -9,9 +10,19 @@ def updatehash(*args):
     h.update(hashing_text.encode("utf-8"))
     return h.hexdigest()
 
+class katanakoin():
+    def __init__(self):
+        self.serial_number()
+    
+
+    def serial_number(self):
+        return updatehash(datetime.datetime.now())
+
+
+
 
 class Block():
-    data = None
+    data = katanakoin()
     hash = None
     nonce = 0
     previous_hash = "0" * 64
@@ -24,7 +35,7 @@ class Block():
         return updatehash(
             self.previous_hash, 
             self.number, 
-            self.data, 
+            self.data.serial_number(), 
             self.nonce
         )
 
@@ -34,7 +45,7 @@ class Block():
                 self.hash()) + 
             " {0}\nData: {1}\nNonce: {2}\n" .format(
                 self.previous_hash, 
-                self.data, 
+                self.data.serial_number(), 
                 self.nonce
             ))
 
@@ -73,52 +84,17 @@ class Blockchain():
         return True
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def main():
-    katanakoin = Blockchain()
-    database = range(10)
+    katanakoins = Blockchain()
+    database = [katanakoin(), katanakoin()]
 
-    num = 0
     for data in database:
         num += 1
-        katanakoin.mine(Block(data,num))
+        katanakoins.mine(Block(data, num))
 
-    for block in katanakoin.chain:
+    for block in katanakoins.chain:
         print(block)
+        print(f"Serial_number: {data.serial_number()}\n")    
 
 if __name__ == "__main__":
     main()
