@@ -1,6 +1,6 @@
 # KatanaKoins 
 
-<img src="images/katankoins_coins.png" width="500">
+<img src="images/katanakoin_coins.png" width="500">
 
 > This is a ReadMe template to help save you time and effort.
 
