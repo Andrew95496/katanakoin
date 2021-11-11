@@ -1,4 +1,4 @@
-# KatanaKoins for all
+# KatanaKoins 
 
 <img src="images/katankoin_blocks.png" width="500">
 
