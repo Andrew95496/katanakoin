@@ -1,6 +1,6 @@
 # Read Me Template
 
-![Project Image](project-image-url)
+![Project Image](images/katanakoin_blocks.png)
 
 > This is a ReadMe template to help save you time and effort.
 
