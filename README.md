@@ -2,12 +2,9 @@
 
 <img src="images/katanakoin_coins.png" width="500">
 
-> This is a ReadMe template to help save you time and effort.
-
 ---
 
 ### Table of Contents
-You're sections headers will be used to reference location of destination.
 
 - [Description](#description)
 - [How To Use](#how-to-use)
@@ -19,12 +16,11 @@ You're sections headers will be used to reference location of destination.
 
 ## Description
 
-Creating ReadMe's for your Github repository can be tedious.  I hope this template can save you time and effort as well as provide you with some consistency across your projects.
+I created this project so I can work on addind data to a database and posting the data with Python
 
 #### Technologies
 
-- Technology 1
-- Technology 2
+- Python
 
 [Back To The Top](#read-me-template)
 
@@ -32,23 +28,7 @@ Creating ReadMe's for your Github repository can be tedious.  I hope this templa
 
 ## How To Use
 
-#### Installation
 
-
-
-#### API Reference
-
-```html
-    <p>dummy code</p>
-```
-[Back To The Top](#read-me-template)
-
----
-
-## References
-[Back To The Top](#read-me-template)
-
----
 
 ## License
 
@@ -80,7 +60,7 @@ SOFTWARE.
 
 ## Author Info
 
-- Twitter - [@jamesqquick](https://twitter.com/jamesqquick)
-- Website - [James Q Quick](https://jamesqquick.com)
+- Linkedin - [Andrew Leacock](https://www.linkedin.com/in/andrew-leacock-1153ba21a/)
+- Portfolio - [Andrew leacock](https://andrew-leacock.netlify.app/)
 
 [Back To The Top](#read-me-template)
