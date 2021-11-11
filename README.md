@@ -1,6 +1,6 @@
-# Read Me Template
+# KatanaKoins for all
 
-![Project Image](images/katanakoin_blocks.png)
+<img src="images/katankoin_blocks.png" width="500">
 
 > This is a ReadMe template to help save you time and effort.
 
