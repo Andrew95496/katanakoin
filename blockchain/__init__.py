@@ -1,1 +1,0 @@
-from .katana_blockchain import katanakoin
