@@ -16,7 +16,7 @@
 
 ## Description
 
-I created this project so I can work on addind data to a database and posting the data with Python
+I created this project so I can work on adding data to a database and posting the data with Python
 
 #### Technologies
 
