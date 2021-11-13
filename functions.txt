@@ -1,0 +1,28 @@
+def function():
+    conn = None
+    cur = None
+
+    try:
+        conn = psycopg2.connect(
+            host = cf.hostname,
+            dbname = cf.database,
+            user = cf.username,
+            password = cf.pwd,
+            port = cf.port_id)
+        
+        
+        #create table
+        
+        
+        
+        #queries
+        
+        conn.commit()
+        
+    except Exception as error:
+        print(error)
+    finally:
+        if cur is not None:
+            cur.close()
+        if conn is not None:
+            conn.close()
