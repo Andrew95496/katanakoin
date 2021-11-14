@@ -1,22 +1,28 @@
 import psycopg2
+import plotly.express as px
 
-def function():
+
+hostname = 'localhost'
+database = 'katanakoin'
+username = 'drewskikatana'
+pwd = 'password'
+port_id = 5432
+
+
+def get_data():
     conn = None
     cur = None
 
     try:
         conn = psycopg2.connect(
-            host = cf.hostname,
-            dbname = cf.database,
-            user = cf.username,
-            password = cf.pwd,
-            port = cf.port_id)
+            host = hostname,
+            dbname = database,
+            user = username,
+            password = pwd,
+            port = port_id)
         
         # cursor
         cur = conn.cursor()
-        
-        #create table
-        
         
         
         #queries

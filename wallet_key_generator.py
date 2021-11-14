@@ -1,9 +1,9 @@
 import psycopg2
 from modules import updatehash
 from config import configs as cf
+from config import bcolors
 import platform
 import datetime
-
 
 def wallet_key_gen():
     conn = None
@@ -21,17 +21,7 @@ def wallet_key_gen():
 
         cur = conn.cursor()
 
-        create_script = ''' CREATE TABLE IF NOT EXISTS wallet_keys (
-                                id int    PRIMARY KEY,
-                                key    varchar(1000) NOT NULL UNIQUE,
-                                has_wallet    BOOLEAN DEFAULT FALSE
-                                )  
-                                '''
-        cur.execute(create_script)
-
         w_key = updatehash(date, plat,uname)
-
-
         get_database_len = 'SELECT count(id) FROM wallet_keys;'
         cur.execute(get_database_len)
         num = cur.fetchone()
@@ -40,7 +30,7 @@ def wallet_key_gen():
         cur.execute(insert_script, insert_values)
         
 
-        print(w_key)
+        print(f'{bcolors.OKBLUE}\nYour wallet key:{bcolors.ENDC}{bcolors.BOLD} {w_key}{bcolors.ENDC}{bcolors.ENDC}\n{bcolors.BOLD}{bcolors.HEADER}{bcolors.UNDERLINE}PLEASE KEEP PRIVATE!!!!{bcolors.ENDC}\n')
         conn.commit()
         
 
@@ -51,3 +41,5 @@ def wallet_key_gen():
             cur.close()
         if conn is not None:
             conn.close()
+
+wallet_key_gen()

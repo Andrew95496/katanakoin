@@ -1,7 +1,9 @@
 import psycopg2
 from modules import katanakoin
 from config import configs as cf
+from config import bcolors
 import datetime
+
 
 
 
@@ -19,20 +21,8 @@ def generate_coins(amount_to_gen):
 
         cur = conn.cursor()
 
-        date = datetime.datetime.now()
-
-        create_script = ''' CREATE TABLE IF NOT EXISTS katanakoins (
-                                coin_number int    PRIMARY KEY,
-                                serial_number    varchar(1000) NOT NULL,
-                                hash    varchar(1000) NOT NULL,
-                                owned_by   varchar(1000) NOT NULL,
-                                timestamp    varchar(100) NOT NULL
-                                )   
-                                '''
-
-        cur.execute(create_script)
-
         cur.execute('SELECT count(coin_number) FROM katanakoins')
+        date = datetime.datetime.now()
         num = cur.fetchone()
         id = 0
         inc = 0
@@ -44,22 +34,28 @@ def generate_coins(amount_to_gen):
             cur.execute(insert_script, insert_values)
             inc += 1
         
-        print("Coins Generated!!")
+        print("\nCoins Generated!!")
 
-        cur.execute('SELECT * FROM katanakoins')
+        cur.execute(f'SELECT * FROM katanakoins ORDER BY  coin_number DESC LIMIT {amount_to_gen}')
         for serial in cur.fetchall():
-            print(f'\nCoin #: {serial[0]}\nSerial #: {serial[1]}\nHash: {serial[2]}\nOwner: {serial[3]}\nTimestamp: {serial[4]}')
+            print(f'''\n{bcolors.OKBLUE}Coin #:{bcolors.ENDC} {bcolors.WARNING}{serial[0]}{bcolors.ENDC}
+            \n{bcolors.OKBLUE}Serial #:{bcolors.ENDC} {bcolors.BOLD}{serial[1]}{bcolors.ENDC}
+            \n{bcolors.OKBLUE}Hash:{bcolors.ENDC} {bcolors.BOLD}{serial[2]}{bcolors.ENDC}
+            \n{bcolors.OKBLUE}Owner:{bcolors.ENDC} {bcolors.WARNING}{serial[3]}{bcolors.ENDC}
+            \n{bcolors.OKBLUE}Timestamp:{bcolors.ENDC} {bcolors.WARNING}{serial[4]}{bcolors.ENDC}''')
+            print('\n##########################################################################################################\n')
 
 
         conn.commit()
         
 
-    except Exception:
-        print("Something went wrong")
+    except Exception as error:
+        print(f'{bcolors.FAIL}{error}{bcolors.ENDC}')
     finally:
         if cur is not None:
             cur.close()
         if conn is not None:
             conn.close()
 
-generate_coins(1000)
+generate_coins(100)
+
