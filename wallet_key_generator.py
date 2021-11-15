@@ -1,11 +1,12 @@
-import psycopg2
-from modules import updatehash
-from config import configs as cf
-from config import bcolors
-import platform
 import datetime
-# MessageBox to display private key
+import platform
+
 import easygui
+import psycopg2
+
+from config import bcolors
+from config import configs as cf
+from modules import updatehash
 
 
 # creating a private key 

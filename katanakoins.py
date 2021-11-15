@@ -1,8 +1,11 @@
-import psycopg2
-from modules import updatehash
-from config import configs as cf
-from config import bcolors
 import datetime
+
+import psycopg2
+
+from config import bcolors
+from config import configs as cf
+from modules import updatehash
+
 
 # generate katanakoins only used at genesis
 def generate_coins(amount_to_gen):

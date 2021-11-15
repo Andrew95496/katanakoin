@@ -1,12 +1,14 @@
-import psycopg2
-from tkinter import *
-from  modules import updatehash
-from config import configs as cf
-from config import bcolors
-from modules.coin_class import mint_coins
 import datetime
 import math
+from tkinter import *
+
 import easygui
+import psycopg2
+
+from config import bcolors
+from config import configs as cf
+from modules import updatehash
+from modules.coin_class import mint_coins
 
 
 # this function creates a wallet for the user using their wallet_key
