@@ -4,7 +4,11 @@ from config import configs as cf
 from config import bcolors
 import platform
 import datetime
+# MessageBox to display private key
+import easygui
 
+
+# creating a private key 
 def wallet_key_gen():
     conn = None
     cur = None
@@ -29,17 +33,18 @@ def wallet_key_gen():
         insert_values = (num[0] , w_key, )
         cur.execute(insert_script, insert_values)
         
+        #display private key
+        easygui.msgbox(f'''\nYour wallet key:\n{w_key}\n
+        \nPLEASE KEEP PRIVATE!!!!\n''')
 
-        print(f'{bcolors.OKBLUE}\nYour wallet key:{bcolors.ENDC}{bcolors.BOLD} {w_key}{bcolors.ENDC}{bcolors.ENDC}\n{bcolors.BOLD}{bcolors.HEADER}{bcolors.UNDERLINE}PLEASE KEEP PRIVATE!!!!{bcolors.ENDC}\n')
         conn.commit()
         
 
     except Exception as error:
-        print(error)
+        print(f'{bcolors.FAIL}{error}{bcolors.ENDC}')
     finally:
         if cur is not None:
             cur.close()
         if conn is not None:
             conn.close()
 
-wallet_key_gen()

@@ -15,24 +15,13 @@ class bcolors:
     BOLD = '\033[1m'
     UNDERLINE = '\033[4m'
 
+# HASH creater
 def updatehash(*args):
     hashing_text = ""; h = sha256()
     for arg in args:
         hashing_text += str(arg)
     h.update(hashing_text.encode("utf-8"))
     return h.hexdigest()
-
-#katanakoin 
-
-class katanakoin():
-
-    def __init__(self):
-        self.serial_number()
-    
-    def serial_number(self):
-        return updatehash(datetime.datetime.now())
-
-
 
 # create coins
 def mint_coins(amount_to_mint):
@@ -54,38 +43,30 @@ def mint_coins(amount_to_mint):
 
         cur = conn.cursor()
 
-        date = datetime.datetime.now()
-
+        
+        
         get_database_len = 'SELECT count(coin_number) FROM katanakoins;'
-
+        date = datetime.datetime.now()
         cur.execute(get_database_len)
         num = cur.fetchone()
         conn.commit()
         id = 0
         inc = 0
         for _ in range(amount_to_mint):
-            serial = katanakoin.serial_number(date)
+            serial = updatehash(date)
             id =  num[0] + inc
             insert_script = 'insert into katanakoins (coin_number, serial_number, hash,owned_by, timestamp) VALUES (%s, %s, %s, %s,%s)' 
-            insert_values = ( id, serial, katanakoin.serial_number(serial), 'None', date)
+            insert_values = ( id, serial, updatehash(serial), 'None', date)
             cur.execute(insert_script, insert_values)
             conn.commit()
             inc += 1
-        
-        print(f'{bcolors.BOLD}{amount_to_mint}{bcolors.ENDC}{bcolors.OKGREEN} coin(s) bought!{bcolors.ENDC}')
-
-
         conn.commit()
         
 
-    except SyntaxError:
-        print("Something went wrong")
+    except Exception as error:
+        print(f'{bcolors.FAIL}{error}{bcolors.ENDC}')
     finally:
         if cur is not None:
             cur.close()
         if conn is not None:
             conn.close()
-
-
-
-

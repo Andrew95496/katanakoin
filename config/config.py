@@ -1,4 +1,4 @@
-
+# variables needed to access database
 class configs():
     hostname = 'localhost'
     database = 'katanakoin'
@@ -8,6 +8,7 @@ class configs():
     conn = None
     cur = None
 
+#for some terminal styling
 class bcolors:
     HEADER = '\033[95m'
     OKBLUE = '\033[94m'

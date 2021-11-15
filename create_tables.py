@@ -1,6 +1,6 @@
 import psycopg2
 from config import configs as cf
-from modules.coin_class import katanakoin
+from config import bcolors
 
 def create_tables():
     conn = None
@@ -36,12 +36,10 @@ def create_tables():
                                 '''
         cur.execute(create_keys)
         
-        #queries
-        
         conn.commit()
         
     except Exception as error:
-        print(error)
+        print(f'{bcolors.FAIL}{error}{bcolors.ENDC}')
     finally:
         if cur is not None:
             cur.close()

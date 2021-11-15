@@ -1,1 +1,1 @@
-from .coin_class import katanakoin, updatehash, mint_coins
+from .coin_class import updatehash, mint_coins
