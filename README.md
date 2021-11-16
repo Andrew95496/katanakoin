@@ -144,7 +144,7 @@ SOFTWARE.
 
 ## Author Info
 
-- Twitter - [@jamesqquick](https://twitter.com/jamesqquick)
-- Website - [James Q Quick](https://jamesqquick.com)
+- Portfolio - [Andrew Leacock](https://andrew-leacock.netlify.app/)
+- Linkedin - [Andrew Leacock](https://www.linkedin.com/in/andrew-leacock-1153ba21a/)
 
 [Back To The Top](#read-me-template)
