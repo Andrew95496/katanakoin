@@ -32,8 +32,13 @@ Katanakoin is a cryptocurrency project that I am working on purely for my own en
 
 ## How To Use
 
-#### Installation
+When you first open the App you will be greeted with a gui
 
+<img width="656" alt="instructions_gui" src="https://user-images.githubusercontent.com/70408199/141923630-8228b266-c8cd-4383-a06e-f14f6b282e9b.png">
+
+***MAKE SURE YOU READ THE INSTRUCTIONS BEFORE STARTING***
+
+The App should Look Like This
 
 ---
 
