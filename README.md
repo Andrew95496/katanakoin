@@ -16,12 +16,15 @@ You're sections headers will be used to reference location of destination.
 
 ## Description
 
-Creating ReadMe's for your Github repository can be tedious.  I hope this template can save you time and effort as well as provide you with some consistency across your projects.
+Katanakoin is a cryptocurrency project that I am working on purely for my own enjoyment. Katanakoin is not an actual currency that is accepted anywhere. 
 
 #### Technologies
 
-- Technology 1
-- Technology 2
+- Python
+- Tkinter
+- BeautifulSoup
+- Easygui
+- etc
 
 [Back To The Top](#read-me-template)
 
@@ -31,14 +34,6 @@ Creating ReadMe's for your Github repository can be tedious.  I hope this templa
 
 #### Installation
 
-
-
-#### API Reference
-
-```html
-    <p>dummy code</p>
-```
-[Back To The Top](#read-me-template)
 
 ---
 
