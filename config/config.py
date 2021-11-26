@@ -1,10 +1,10 @@
 # variables needed to access database
 class configs():
-    hostname = 'localhost'
-    database = 'katanakoin'
-    username = 'drewskikatana'
-    pwd = 'password'
-    port_id = 5432
+    hostname =  ###########
+    database = ###########
+    username = #############
+    pwd = #########
+    port_id = ####
     conn = None
     cur = None
 
