@@ -1,6 +1,6 @@
 <h1 align="center"> <b>KATANAKOINS</b> </h1>
 
-<p align="center"><img  width="500" alt="private_key_gui" src="https://user-images.githubusercontent.com/70408199/143525332-05d3de5d-0682-43ea-88ca-3524279dfbab.png"></p> 
+<p align="center"><img  width="500" alt="private_key_gui" src="katanakoin"></p> 
 
 ---
 
